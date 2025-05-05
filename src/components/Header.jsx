@@ -1,10 +1,4 @@
-import { useMemo } from 'react'
-
-const Header = ({cart, removeFromCart, changeQuantity, cleanCart}) => {
-
-    const isEmpty = useMemo(() => cart.length === 0, [cart])
-    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
-
+const Header = ({cart, removeFromCart, changeQuantity, cleanCart, isEmpty, cartTotal, totalItems }) => {
     return (
         <header className="py-5 header">
             <div className="container-xl">
@@ -19,6 +13,10 @@ const Header = ({cart, removeFromCart, changeQuantity, cleanCart}) => {
                             className="carrito"
                         >
                             <img className="img-fluid" src="/img/carrito.png" alt="imagen carrito" />
+
+                            {totalItems > 0 && (
+                                <span className="cart-badge btn btn-danger">{totalItems > 9 ? '9+' : totalItems}</span>
+                            )}
 
                             <div id="carrito" className="bg-white p-3">
                                 {isEmpty ? (

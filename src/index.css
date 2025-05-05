@@ -764,6 +764,23 @@ button:not(:disabled),
 .header .header-guitarra {
   display: none;
 }
+.cart-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-size: .95rem;
+  font-weight: bold;
+  line-height: 1;
+  transform: translate(50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  height: 30px;
+  width: 30px;
+}
 @media (min-width: 992px) {
   .header .header-guitarra {
     display: block;
